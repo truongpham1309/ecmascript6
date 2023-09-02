@@ -1,10 +1,8 @@
-import { useEffect } from "../../utilities";
-import { Students } from "../../data";
-
-
-
+import { router, useEffect } from "../../utilities";
 
 const AdminProductAddPage = () => {
+  const Students = JSON.parse(localStorage.getItem('Student')) || [];
+  
   useEffect(() => {
     const form = document.querySelector("#form-add");
     const Name = document.querySelector("#nameStudent");
@@ -13,10 +11,12 @@ const AdminProductAddPage = () => {
       e.preventDefault();
       const newStudent = {
         id: Students.length + 1,
-        Name: Name.value,
-        Age: Age.value
+        name: Name.value,
+        age: +Age.value
       }
-      console.log(newStudent);
+      Students.push(newStudent);  
+      localStorage.setItem('Student', JSON.stringify(Students));  
+      router.navigate("/products");
     });
   });
 
@@ -35,7 +35,7 @@ const AdminProductAddPage = () => {
         <label for="">Age</label>
         <input class="form-control tw-w-20" type="number" name="" id="ageStudent">
       </div>
-      <button id="add" class="btn btn-primary mt-2 tw-relative tw-left-0" type="submit">Add Student</button>
+      <button class="btn btn-primary mt-2 tw-relative tw-left-0" type="submit">Add Student</button>
   </form>
   </div>
 </div>

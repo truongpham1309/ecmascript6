@@ -1,6 +1,6 @@
 const NotFoundPage = () => {
   return `
-    <h1> Not Found </h1>
+    <h1 class="tw-text-center tw-font-bold"> Not Found </h1>
   `
 }
 export default NotFoundPage
