@@ -1,16 +1,20 @@
+import classer from "../main.module.css"
 const ContactPage = () => {
-  const infomation = JSON.parse(localStorage.getItem('jobs'));
-  const infomation2 = [
 
-  ];
   
 
   return `
-    <div class="tw-grid tw-justify-center tw-font-bold tw-text-2xl">
-      <div> <span class="text-gray-700 text-[15px] my-4">DEV TRUONG</span> </div>
-      <div> <span class="text-gray-700 text-[15px] my-4">WEB DEVELOPER</span> </div>
-      <div> <span class="text-gray-700 text-[15px] my-4">INTERNSHIP</span> </div>
-    </div> 
+  <div class="${classer.animate_word} tw-flex tw-justify-center tw-items-center">
+    <div class="${classer.letter} tw-cursor-grab tw-font-bold tw-text-[40px] tw-uppercase">t</div>
+    <div class="${classer.letter} tw-cursor-grab tw-font-bold tw-text-[40px] tw-uppercase">r</div>
+    <div class="${classer.letter} tw-cursor-grab tw-font-bold tw-text-[40px] tw-uppercase">u</div>
+    <div class="${classer.letter} tw-cursor-grab tw-font-bold tw-text-[40px] tw-uppercase">o</div>
+    <div class="${classer.letter} tw-cursor-grab tw-font-bold tw-text-[40px] tw-uppercase">n</div>
+    <div class="${classer.letter} tw-cursor-grab tw-font-bold tw-text-[40px] tw-uppercase">g</div>
+    <div class="${classer.letter} tw-cursor-grab tw-font-bold tw-text-[40px] tw-uppercase">d</div>
+    <div class="${classer.letter} tw-cursor-grab tw-font-bold tw-text-[40px] tw-uppercase">e</div>
+    <div class="${classer.letter} tw-cursor-grab tw-font-bold tw-text-[40px] tw-uppercase">v</div>
+  </div>
     `
 }
 export default ContactPage

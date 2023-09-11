@@ -20,6 +20,6 @@ router.on('/contact', () => render(ContactPage, app))
 router.on('/admin/student/add', () => render(AdminProductAddPage, app))
 router.on('/admin/student/:id/edit', ({data}) => render(() => AdminStudentEditPage(data),app));
 
-router.notFound(() => render(NotFoundPage, app));
+router.notFound(render(NotFoundPage, app));
 router.resolve();
 

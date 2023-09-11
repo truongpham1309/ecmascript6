@@ -6,16 +6,15 @@ const ProductAdd = () => {
   useEffect(() => {
     const btns = document.querySelectorAll('.btn-remove');
     for(let btn of btns) {
-      btn.addEventListener('click', () =>{
-        confirm(`Are you sure you want to remove`);
-      });
       btn.addEventListener('click', function () {
         const id = btn.getAttribute('data-id');
-        setStudent(Student.filter((student) => student.id !== +id));
+        const newStudent = Student.filter((student) => +student.id !== +id);
+        setStudent(newStudent);
         localStorage.setItem('Student', JSON.stringify(Student));
   });
   }
 })
+
 
   useEffect(() => {
     const students = JSON.parse(localStorage.getItem('Student')) || [];
@@ -24,6 +23,7 @@ const ProductAdd = () => {
 
 
   return `
+  <h1 class="tw-text-4xl tw-text-center tw-font-[700] tw-my-6"> Student List </h1>
   <div class="tw-flex tw-justify-center">
     <table border="1" class="tw-border-collapse mt-4"> 
     <tr>
@@ -31,7 +31,7 @@ const ProductAdd = () => {
       <th class="tw-px-8 tw-text-center tw-py-3" >Name</th>
       <th class="tw-px-8 tw-text-center tw-py-3" >Age</th>
       <th class="tw-px-8 tw-text-center tw-py-3" >Action</th>
-      <th class="tw-px-8 tw-text-center tw-py-3" ><a href="/admin/student/add" class="" ><button class='btn btn-primary'> Add Student </button></a></th>
+      <th class="tw-px-8 tw-text-center tw-py-3" ><a href="/admin/student/add" class="" ><button class='btn-add btn btn-primary tw-ease-in-out tw-duration-300'> Add Student </button></a></th>
     </tr>
       ${Student.map((student, index) => {
         return `
